@@ -12,13 +12,9 @@ export default function LeaguePage({
   params: { id: string };
 }) {
   const [expandedTeam, setExpandedTeam] = useState<number | null>(1);
-  //   const [expandedHeight, setExpandedHeight] = useState(0);
-  //   const contentRef = useRef<HTMLDivElement>(null);
-  // 変更: 個別の高さを保存するためのオブジェクトを使用
   const [expandedHeights, setExpandedHeights] = useState<{
     [key: number]: number;
   }>({});
-  // 変更: 複数のrefを保持するためのオブジェクトを使用
   const contentRefs = useRef<{ [key: number]: HTMLDivElement | null }>({});
 
   const fetchLeagueData = (leagueId: string) => {
@@ -139,12 +135,7 @@ export default function LeaguePage({
       },
     ];
   };
-  //   useEffect(() => {
-  //     if (contentRef.current) {
-  //       console.log(contentRef.current.scrollHeight);
-  //       setExpandedHeight(contentRef.current.scrollHeight);
-  //     }
-  //   }, [expandedTeam]);
+  const leagueData = fetchLeagueData(id);
   useEffect(() => {
     leagueData.forEach((data) => {
       if (contentRefs.current[data.id]) {
@@ -159,7 +150,7 @@ export default function LeaguePage({
   const toggleExpand = (teamId: number) => {
     setExpandedTeam(expandedTeam === teamId ? null : teamId);
   };
-  const leagueData = fetchLeagueData(id);
+
   return (
     <>
       <div className="gradient-bg-3 text-white text-center text-2xl font-bold  px-3 py-4 mb-8">
