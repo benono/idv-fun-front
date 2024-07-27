@@ -9,6 +9,9 @@
   .gradient-bg-2 {
     @apply bg-gradient-to-t from-[#494242] to-[#747981];
   }
+  .gradient-bg-3 {
+    @apply bg-gradient-to-t from-[#2E3C50] to-[#6A88B6];
+  }
 }
 
 @layer base {
