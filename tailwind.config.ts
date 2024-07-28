@@ -26,6 +26,7 @@ const config = {
           active: "#A3BB04",
         },
         fennel: "#9273FF",
+        reject: "#3D5FC9",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -78,6 +79,11 @@ const config = {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+      },
+      backgroundImage: {
+        //"map-arms-factory": "url('/map/ArmsFactory.webp')",
+        "map-arms-factory": "url('/map/arms-factory.webp')",
+        "map-red-church": "url('/map/Red_Church_Wedding .webp')",
       },
     },
   },
